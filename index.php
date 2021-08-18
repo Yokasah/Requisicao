@@ -65,6 +65,7 @@ include 'header.php';
         <?php
         //TESTE
 //        echo($_SESSION['tipoUser']);
+// TESTES TO SEE IF IN AZURE WHAT TYPE OF USER IT IS
             if($_SESSION['login'] == 'true'){
                 if($_SESSION['tipoUser'] == 'Docente'){
                     echo("Docente Externo");
