@@ -78,15 +78,15 @@ if ( $conn->query( $sql ) == true ) {
 		$mail->isSMTP();  //Send using SMTP
 		$mail->Host       = 'smtp.office365.com';  //Set the SMTP server to send through
 		$mail->SMTPAuth   = true;   //Enable SMTP authentication
-		$mail->Username   = 'tomasmorais@sefo.pt';  //SMTP username
+		$mail->Username   = '';  //SMTP username aka the Email that will receive the nots
 		$mail->Password   = 'Vol60153';  //SMTP password
 		$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;  //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
 		$mail->Port       = 587; //Port of SMTP
 		$mail->CharSet    = 'UTF-8';    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
 		//Recipients
-		$mail->setFrom( 'tomasmorais@sefo.pt', 'Requisições ESCO' ); //Account that recives the Emails
-		$mail->addAddress( 'tomasmorais@sefo.pt' );     //Add a recipient - Name is optional
+		$mail->setFrom( '', 'BOOKING EXAMPLE' ); //Account that recives the Emails
+		$mail->addAddress( '' );     //Add a recipient aka the Session Email User- Name is optional 
 
 		//Content
 		$mail->isHTML( true );//Set email format to HTML
@@ -118,11 +118,3 @@ if ( $conn->query( $sql ) == true ) {
 } else {
 	echo "erro";
 }
-
-//Testes
-//echo($queryRegist);
-//echo($utilizador);
-//echo($datainicial . " " . $horainicial);
-//echo($horainicial);
-//echo($horafinal);
-
